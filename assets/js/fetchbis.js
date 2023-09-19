@@ -1,10 +1,17 @@
 // Déclaration des fonctions
+// j'interroge ma bdd en appelant mon fichier getDatas.php
 
 function getDatas(nomPokemon) {
-    fetch(`https://pokebuildapi.fr/api/v1/pokemon/${nomPokemon}`)
+    fetch("./assets/php/getDatas.php", {
+        method:"POST",
+        body: nomPokemon,
+        headers: {
+            "Content-Type": "application/text",
+        },
+    })
     .then((res) => res.json())
-    .then((lePokemon) => {
-        // console.log("Pokemon récupéré : ", lePokemon);
+    .then(lePokemon => {
+        console.log("Pokemon récupéré : ", lePokemon);
         let types = [];
         lePokemon.apiTypes.forEach(type => {
         types.push(type.name);
@@ -23,15 +30,15 @@ function getDatas(nomPokemon) {
         <img id="image" src="${lePokemon.image}" alt="${lePokemon.name}">
         <p id="types">Élément : ${lesTypes}</p>
         <p id="evolution">Évolution : ${lesEvolutions}</p>
-        <button type="submit" name="details">Détails</button>`;
-        console.log("js") 
+        <button type="submit" name="details">Détails</button>`; 
+        console.log("php boutton")  
           
-        const detailsBtn = document.querySelector("button[type='submit']");
+        const detailsBtn = document.querySelector("button[type=submit]");
         detailsBtn.addEventListener("click", (event) => {
             event.preventDefault();
                 let para = new URLSearchParams();
                 para.append("pokemon", lePokemon.name);
-                console.log(para.get("pokemon"));
+                // console.log(para.get("pokemon"));
                 location.href = "http://localhost/htdocs/js-localhost/pokemon-select/details.html?" + para.toString();
             })      
     })
@@ -40,7 +47,7 @@ function getDatas(nomPokemon) {
 fetch(`https://pokebuildapi.fr/api/v1/pokemon/`)
 .then((response) => response.json()) //convertit la réponse de l'api en bdd Json
 .then((dataPokemon) => {
-    // console.log(dataPokemon)
+    console.log(dataPokemon)
     for (let i = 0; i < dataPokemon.length; i++) {
         const pokemon = dataPokemon[i];
         const select = document.getElementById('choisir');
@@ -53,14 +60,13 @@ fetch(`https://pokebuildapi.fr/api/v1/pokemon/`)
 
 //je déclare la constante pour le formulaire
 
-document.querySelector("input[type='submit']").addEventListener("click", getForm);
+document.querySelector("#php").addEventListener("click", getForm);
 function getForm(event) {
     event.preventDefault(); 
-    //console.log(this);
   
     // Code pour chercher dans le formulaire(this) quelle option est selected
     let pokemonChoisi = document.querySelector("select").value;
-    // console.log(pokemonChoisi);
+    console.log(pokemonChoisi);
     // console.log("pokemonChoisi : ", pokemonChoisi);
     getDatas(pokemonChoisi);  
   }

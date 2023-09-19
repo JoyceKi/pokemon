@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/fetch.js" defer></script>
+    <link rel="icon" href="./assets/images/pokeball.png">
+    /*script qui permet de fetch les datas directement via l'API*/
+    <script src="./assets/js/fetch.js" defer></script> 
+    /*script qui fetch les datas via un fichier PHP*/
+    <script src="./assets/js/fetchbis.js" defer></script>
     <title>Bienvenue</title>
 </head>
 
@@ -12,7 +16,7 @@
     <section>
         <header>
             <nav>
-                <a href="../index.html" id="pokem">
+                <a href="http://localhost/htdocs/js-localhost/pokemon-select/index.html" id="pokem">
                     <img src="./assets/images/pokemon-mini.png" alt="Logo Pokemon" id="poke">
                 </a>
                 <h1>
@@ -30,7 +34,8 @@
                     <select id="choisir" name="choisir">    
                       
                     </select>  
-                    <input type="submit" value="Choisir">          
+                    <input type="submit" value="Choisir via JS"> 
+                    <input type="submit" value="Choisir via PHP" id="php">         
                 </fieldset>
                 <article id="infos">  
                                    
