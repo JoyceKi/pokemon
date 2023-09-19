@@ -4,44 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./assets/js/details.js" defer></script>
-    <title>Caractéristiques du Pokémon</title>
+    <script src="./assets/js/fetch.js" defer></script>
+    <title>Bienvenue</title>
 </head>
 
 <body>
     <section>
-        <header>            
+        <header>
             <nav>
                 <a href="../index.html" id="pokem">
                     <img src="./assets/images/pokemon-mini.png" alt="Logo Pokemon" id="poke">
                 </a>
                 <h1>
-                    Caractéristiques du Pokémon
-                </h1>
-                <div class="boutton">
-                <button><a href="./index.html">Accueil</a></button>
-                <button><a href="./search.html">BDD</a></button>
-                </div>
+                    Infos générales du Pokémon
+                </h1>              
+                <button class="boutton"><a href="./index.html">Accueil</a></button>                
             </nav>
         </header>
         <main>
             <form action="" name="form">
                 <fieldset>
                     <legend>
-                        <strong> Détails</strong>
+                        <strong> Sélectionnez un Pokémon</strong>
                     </legend>   
-                    <ul class="stats">
-                                          
-                    </ul>                              
+                    <select id="choisir" name="choisir">    
+                      
+                    </select>  
+                    <input type="submit" value="Choisir">          
                 </fieldset>
-                <article id="stats">  
-                            
+                <article id="infos">  
+                                   
                 </article>
             </form>  
         </main>
         <footer>
         </footer>      
     </section>
+    
 </body>
-
 </html>

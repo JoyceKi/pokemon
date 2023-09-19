@@ -1,8 +1,14 @@
+@font-face {
+    font-family: 'Pokemon Solid Normal';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Pokemon Solid Normal'), url('../fonts/Pokemon_Solid.woff') format('woff');
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;  
 }
 
 section {
@@ -14,9 +20,34 @@ section {
 }
 
 header {
-    text-align: center;
-    height: 10vh; 
+    text-align: center; 
     padding: 50px;  
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#pokem {
+    width: 10vw;
+}
+
+#poke {
+    max-width: 70%;
+}
+
+h1 {
+    font-family: 'Pokemon Solid Normal';
+    padding: 10px 50px;
+    width: 60%;
+}
+
+.boutton > button {
+   padding: 15px 15px;
 }
 
 main {
@@ -27,6 +58,11 @@ main {
 form {
     width: 50%;
     margin: auto;
+}
+
+#accueil {
+    display: flex;
+    justify-content: center;
 }
 
 fieldset {
